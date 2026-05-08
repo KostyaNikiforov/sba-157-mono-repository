@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    ============================================================
+    TASK 5: Change the text inside <title> to include your name
+    Example: <title>Jane Smith - Assignment 6</title>
+    ============================================================
+  -->
+  <title>Nykyforov Kostiantyn - Assignment 6</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Chart.js library (replaces Chartist from older course materials) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+  <style>
+    /*
+      ============================================================
+      TASK 2: Change the background-color below to a light blue
+              that is easy on the eyes.
+              Example: background-color: #d0eaf8;
+      ============================================================
+    */
+
+    body {
+      font-family: Georgia, serif;
+      text-align: center;
+      padding: 40px 20px;
+
+      /* TASK 2 -- change this color */
+      background-color: #d0eaf8;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #555;
+      margin-bottom: 32px;
+    }
+
+    .chart-container {
+      position: relative;
+      width: 480px;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .source {
+      margin-top: 28px;
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    .source a {
+      color: #3a7bd5;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+    ============================================================
+    TASK 3: Change the chart title below.
+            Replace the placeholder text with something
+            descriptive, e.g.:
+            "Where People Listen to Podcasts (2017)"
+    ============================================================
+  -->
+  <h1>Where People Listen to Podcasts (2017)</h1>
+  <p class="subtitle">Source: Edison Research, The Podcast Consumer 2017</p>
+
+  <div class="chart-container">
+    <canvas id="podcastChart"></canvas>
+  </div>
+
+  <!--
+    ============================================================
+    TASK 4: Make the "Source" text below a clickable link.
+            The URL is:
+            https://www.edisonresearch.com/the-podcast-consumer-2017/
+
+            Change this line:
+              <p class="source">Source: Edison Research (2017)</p>
+
+            To something like:
+              <p class="source">
+                Source: <a href="https://www.edisonresearch.com/the-podcast-consumer-2017/">
+                  Edison Research (2017)
+                </a>
+              </p>
+    ============================================================
+  -->
+  <p class="source"><a href="https://www.edisonresearch.com/the-podcast-consumer-2017/" target="_blank">Source: Edison Research (2017)</a></p>
+
+
+  <script>
+    /*
+      ============================================================
+      TASK 1: Fill in the two arrays below.
+
+      listenWhere[]   -- the category labels (text)
+      listenPercent[] -- the matching numbers (percentages)
+
+      The data you need to add:
+        Home:       51
+        Work:       14
+        Commuting:  25
+        Other:      10
+
+      The first item ("Home" / 51) has been done for you
+      as an example. Add the remaining three.
+      ============================================================
+    */
+
+    var listenWhere   = ["Home", "Work", "Commuting", "Other"];
+    var listenPercent = [51, 14, 25, 10];
+
+
+    /* ---- Do not edit below this line ---- */
+
+    var data = {
+      labels: listenWhere,
+      datasets: [{
+        data: listenPercent,
+        backgroundColor: [
+          "#4e79a7",
+          "#f28e2b",
+          "#e15759",
+          "#76b7b2"
+        ],
+        borderColor: "#ffffff",
+        borderWidth: 3
+      }]
+    };
+
+    new Chart(document.getElementById("podcastChart"), {
+      type: "pie",
+      data: data,
+      options: {
+        plugins: {
+          legend: {
+            position: "bottom",
+            labels: {
+              font: { size: 14, family: "Georgia, serif" },
+              padding: 18
+            }
+          },
+          tooltip: {
+            callbacks: {
+              label: function(context) {
+                return " " + context.label + ": " + context.parsed + "%";
+              }
+            }
+          }
+        }
+      }
+    });
+  </script>
+
+</body>
+</html>
