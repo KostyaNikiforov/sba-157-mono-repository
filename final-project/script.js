@@ -5,8 +5,8 @@ let currentEventIndex = 0;
 
 const events = [
     {
-        step: "I",
-        title: 'Euromaidan (November-December 2013)',
+        step: "Step I (November-December 2013)",
+        title: 'Euromaidan',
         events: [
             {
                 date: 'November 21, 2013',
@@ -24,8 +24,8 @@ const events = [
         imageUrl: 'images/event-1.jpg'
     },
     {
-        step: "II",
-        title: 'Beginning of Popular Resistance (December 2013 - January 2014)',
+        step: "Step II (December 2013 - January 2014)",
+        title: 'Beginning of Popular Resistance',
         events: [
             {
                 date: 'December 1, 2013',
@@ -43,8 +43,8 @@ const events = [
         imageUrl: 'images/event-2.jpg'
     },
     {
-        step: "III",
-        title: 'Escalation and "Fire Baptism" (January - February 2014)',
+        step: "Step III (January - February 2014)",
+        title: 'Escalation and "Fire Baptism"',
         events: [
             {
                 date: 'January 19, 2014',
@@ -62,8 +62,8 @@ const events = [
         imageUrl: 'images/event-3.jpg'
     },
     {
-        step: "IV",
-        title: 'Climax and Victory (February 2014)',
+        step: "Step IV (February 2014)",
+        title: 'Climax and Victory',
         events: [
             {
                 date: 'February 18, 2014',
